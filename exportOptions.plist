@@ -3,12 +3,17 @@
 <plist version="1.0">
 <dict>
     <key>method</key>
-    <string>app-store</string>
-    <key>uploadBitcode</key>
-    <false/>
-    <key>uploadSymbols</key>
-    <true/>
-    <key>compileBitcode</key>
-    <false/>
+    <string>app-store-connect</string>
+    <key>teamID</key>
+    <string>TA5QW3L6ZW</string>
+    <key>provisioningProfiles</key>
+    <dict>
+        <key>az.pervinmuellim.app</key>
+        <string>PervinMuellim AppStore</string>
+    </dict>
+    <key>signingStyle</key>
+    <string>manual</string>
+    <key>signingCertificate</key>
+    <string>iPhone Distribution</string>
 </dict>
 </plist>
