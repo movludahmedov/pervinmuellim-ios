@@ -3,8 +3,6 @@
     name: Pervin Muellim iOS
     max_build_duration: 60
     environment:
-      apple_signing:
-        distribution_type: app_store
       vars:
         BUNDLE_ID: "az.pervinmuellim.app"
         XCODE_PROJECT: "PervinMuellim.xcodeproj"
@@ -27,8 +25,3 @@
             -exportOptionsPlist exportOptions.plist
     artifacts:
       - build/ipa/*.ipa
-    publishing:
-      app_store_connect:
-        api_key: $APP_STORE_CONNECT_PRIVATE_KEY
-        key_id: $APP_STORE_CONNECT_KEY_IDENTIFIER
-        issuer_id: $APP_STORE_CONNECT_ISSUER_ID
