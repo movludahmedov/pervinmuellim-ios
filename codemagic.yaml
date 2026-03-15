@@ -14,14 +14,12 @@
             -project "$XCODE_PROJECT" \
             -scheme "$XCODE_SCHEME" \
             -configuration Release \
+            -sdk iphoneos \
+            -destination "generic/platform=iOS" \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO \
             -archivePath build/PervinMuellim.xcarchive \
             archive
-      - name: Export IPA
-        script: |
-          xcodebuild \
-            -exportArchive \
-            -archivePath build/PervinMuellim.xcarchive \
-            -exportPath build/ipa \
-            -exportOptionsPlist exportOptions.plist
     artifacts:
-      - build/ipa/*.ipa
+      - build/PervinMuellim.xcarchive
