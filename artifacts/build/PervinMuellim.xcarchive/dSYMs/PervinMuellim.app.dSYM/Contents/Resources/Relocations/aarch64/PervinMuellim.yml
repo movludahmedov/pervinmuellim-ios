@@ -1,0 +1,32 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/builder/Library/Developer/Xcode/DerivedData/PervinMuellim-anaifdisynmpiefnokavrhcdsrqd/Build/Intermediates.noindex/ArchiveIntermediates/PervinMuellim/InstallationBuildProductsLocation/Applications/PervinMuellim.app/PervinMuellim'
+relocations:
+  - { offset: 0x705E0, size: 0x8, addend: 0x0, symName: '_$s13PervinMuellim11AppDelegateCMa', symObjAddr: 0x204, symBinAddr: 0x1000041A0, symSize: 0x20 }
+  - { offset: 0x705F4, size: 0x8, addend: 0x0, symName: '_$s13PervinMuellim11AppDelegateCfETo', symObjAddr: 0x328, symBinAddr: 0x100004238, symSize: 0x10 }
+  - { offset: 0x706D5, size: 0x8, addend: 0x0, symName: '_$s13PervinMuellim11AppDelegateC6windowSo8UIWindowCSgvgTo', symObjAddr: 0x8, symBinAddr: 0x100004000, symSize: 0x48 }
+  - { offset: 0x70708, size: 0x8, addend: 0x0, symName: '_$s13PervinMuellim11AppDelegateC6windowSo8UIWindowCSgvg', symObjAddr: 0x50, symBinAddr: 0x100004048, symSize: 0x4C }
+  - { offset: 0x70753, size: 0x8, addend: 0x0, symName: '_$s13PervinMuellim11AppDelegateC6windowSo8UIWindowCSgvsTo', symObjAddr: 0x9C, symBinAddr: 0x100004094, symSize: 0x64 }
+  - { offset: 0x7078E, size: 0x8, addend: 0x0, symName: '_$s13PervinMuellim11AppDelegateC6windowSo8UIWindowCSgvs', symObjAddr: 0x100, symBinAddr: 0x1000040F8, symSize: 0x54 }
+  - { offset: 0x707B7, size: 0x8, addend: 0x0, symName: '_$s13PervinMuellim11AppDelegateC6windowSo8UIWindowCSgvM', symObjAddr: 0x154, symBinAddr: 0x10000414C, symSize: 0x40 }
+  - { offset: 0x707DC, size: 0x8, addend: 0x0, symName: '_$s13PervinMuellim11AppDelegateC6windowSo8UIWindowCSgvM.resume.0', symObjAddr: 0x194, symBinAddr: 0x10000418C, symSize: 0x4 }
+  - { offset: 0x707FD, size: 0x8, addend: 0x0, symName: '_$s13PervinMuellim11AppDelegateC11application_29didFinishLaunchingWithOptionsSbSo13UIApplicationC_SDySo0k6LaunchJ3KeyaypGSgtF', symObjAddr: 0x198, symBinAddr: 0x100004190, symSize: 0x8 }
+  - { offset: 0x70848, size: 0x8, addend: 0x0, symName: '_$s13PervinMuellim11AppDelegateC11application_29didFinishLaunchingWithOptionsSbSo13UIApplicationC_SDySo0k6LaunchJ3KeyaypGSgtFTo', symObjAddr: 0x1A0, symBinAddr: 0x100004198, symSize: 0x8 }
+  - { offset: 0x7087C, size: 0x8, addend: 0x0, symName: '_$s13PervinMuellim11AppDelegateCACycfcTo', symObjAddr: 0x224, symBinAddr: 0x1000041C0, symSize: 0x48 }
+  - { offset: 0x708CB, size: 0x8, addend: 0x0, symName: '_$s13PervinMuellim11AppDelegateCfD', symObjAddr: 0x2F8, symBinAddr: 0x100004208, symSize: 0x30 }
+  - { offset: 0x70905, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x338, symBinAddr: 0x100004248, symSize: 0x8C }
+  - { offset: 0x70BA2, size: 0x8, addend: 0x0, symName: ___swift_instantiateConcreteTypeFromMangledNameV2, symObjAddr: 0x5A8, symBinAddr: 0x100004870, symSize: 0x44 }
+  - { offset: 0x70BB6, size: 0x8, addend: 0x0, symName: '_$s13PervinMuellim14ViewControllerCMa', symObjAddr: 0x5EC, symBinAddr: 0x1000048B4, symSize: 0x20 }
+  - { offset: 0x70BCA, size: 0x8, addend: 0x0, symName: '_$s13PervinMuellim14ViewControllerCfETo', symObjAddr: 0xC38, symBinAddr: 0x100004C58, symSize: 0x10 }
+  - { offset: 0x70CBE, size: 0x8, addend: 0x0, symName: '_$s13PervinMuellim14ViewControllerC03webC0So05WKWebC0CSgvg', symObjAddr: 0x8, symBinAddr: 0x1000042D4, symSize: 0x4C }
+  - { offset: 0x70CEA, size: 0x8, addend: 0x0, symName: '_$s13PervinMuellim14ViewControllerC03webC0So05WKWebC0CSgvs', symObjAddr: 0x54, symBinAddr: 0x100004320, symSize: 0x54 }
+  - { offset: 0x70D1F, size: 0x8, addend: 0x0, symName: '_$s13PervinMuellim14ViewControllerC03webC0So05WKWebC0CSgvM', symObjAddr: 0xA8, symBinAddr: 0x100004374, symSize: 0x40 }
+  - { offset: 0x70E49, size: 0x8, addend: 0x0, symName: '_$s13PervinMuellim14ViewControllerC11viewDidLoadyyF', symObjAddr: 0xEC, symBinAddr: 0x1000043B4, symSize: 0x4BC }
+  - { offset: 0x70F53, size: 0x8, addend: 0x0, symName: '_$s13PervinMuellim14ViewControllerC11viewDidLoadyyFTo', symObjAddr: 0x60C, symBinAddr: 0x1000048D4, symSize: 0x28 }
+  - { offset: 0x70F80, size: 0x8, addend: 0x0, symName: '_$s13PervinMuellim14ViewControllerC21viewDidLayoutSubviewsyyFTo', symObjAddr: 0x714, symBinAddr: 0x1000048FC, symSize: 0x104 }
+  - { offset: 0x70FB9, size: 0x8, addend: 0x0, symName: '_$s13PervinMuellim14ViewControllerC03webC0_28didFailProvisionalNavigation9withErrorySo05WKWebC0C_So12WKNavigationCSgs0K0_ptF', symObjAddr: 0x818, symBinAddr: 0x100004A00, symSize: 0x64 }
+  - { offset: 0x710B8, size: 0x8, addend: 0x0, symName: '_$s13PervinMuellim14ViewControllerC03webC0_28didFailProvisionalNavigation9withErrorySo05WKWebC0C_So12WKNavigationCSgs0K0_ptFTo', symObjAddr: 0x87C, symBinAddr: 0x100004A64, symSize: 0x74 }
+  - { offset: 0x71144, size: 0x8, addend: 0x0, symName: '_$s13PervinMuellim14ViewControllerC7nibName6bundleACSSSg_So8NSBundleCSgtcfcTo', symObjAddr: 0x9FC, symBinAddr: 0x100004AD8, symSize: 0xC4 }
+  - { offset: 0x7119C, size: 0x8, addend: 0x0, symName: '_$s13PervinMuellim14ViewControllerC5coderACSgSo7NSCoderC_tcfcTo', symObjAddr: 0xB7C, symBinAddr: 0x100004B9C, symSize: 0x8C }
+  - { offset: 0x711D3, size: 0x8, addend: 0x0, symName: '_$s13PervinMuellim14ViewControllerCfD', symObjAddr: 0xC08, symBinAddr: 0x100004C28, symSize: 0x30 }
+...
