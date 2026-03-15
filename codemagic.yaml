@@ -1,4 +1,4 @@
-﻿workflows:
+workflows:
   ios-workflow:
     name: Pervin Muellim iOS
     max_build_duration: 60
@@ -28,3 +28,8 @@
             -exportPath build/
     artifacts:
       - build/*.ipa
+    publishing:
+      app_store_connect:
+        auth: integration
+        submit_to_testflight: false
+        submit_to_app_store: false
