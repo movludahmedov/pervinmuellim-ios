@@ -21,8 +21,8 @@
           security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "buildpass" build.keychain
           echo $CM_PROVISIONING_PROFILE | base64 --decode > /tmp/profile.mobileprovision
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-          UUID=$(security cms -D -i /tmp/profile.mobileprovision | plutil -extract UUID raw -)
-          cp /tmp/profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/$UUID.mobileprovision
+          cp /tmp/profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/PervinMuellim.mobileprovision
+          ls ~/Library/MobileDevice/Provisioning\ Profiles/
       - name: Build iOS
         script: |
           xcodebuild \
@@ -32,6 +32,8 @@
             -sdk iphoneos \
             -destination "generic/platform=iOS" \
             DEVELOPMENT_TEAM="$APPLE_TEAM_ID" \
+            PROVISIONING_PROFILE_SPECIFIER="PervinMuellim AppStore" \
+            CODE_SIGN_IDENTITY="iPhone Distribution" \
             -archivePath build/PervinMuellim.xcarchive \
             archive
       - name: Export IPA
