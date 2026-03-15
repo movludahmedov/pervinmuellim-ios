@@ -21,7 +21,7 @@
           security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "buildpass" build.keychain
           echo $CM_PROVISIONING_PROFILE | base64 --decode > /tmp/profile.mobileprovision
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-          UUID=$(/usr/libexec/PlistBuddy -c "Print UUID" /dev/stdin <<< $(security cms -D -i /tmp/profile.mobileprovision))
+          UUID=$(grep -a -A1 '<key>UUID</key>' /tmp/profile.mobileprovision | grep '<string>' | sed 's/.*<string>\(.*\)<\/string>.*/\1/' | tr -d '[:space:]')
           echo "Profile UUID: $UUID"
           cp /tmp/profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/$UUID.mobileprovision
           ls ~/Library/MobileDevice/Provisioning\ Profiles/
