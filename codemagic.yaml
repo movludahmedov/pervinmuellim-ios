@@ -2,15 +2,18 @@ workflows:
   ios-workflow:
     name: Pervin Muellim iOS
     max_build_duration: 60
-    integrations:
-      app_store_connect: Codemagic
     environment:
       ios_signing:
         distribution_type: app_store
         bundle_identifier: az.pervinmuellim.app
+      app_store_connect:
+        api_key: $APP_STORE_CONNECT_PRIVATE_KEY
+        key_id: $APP_STORE_CONNECT_KEY_IDENTIFIER
+        issuer_id: $APP_STORE_CONNECT_ISSUER_ID
       vars:
         XCODE_PROJECT: "PervinMuellim.xcodeproj"
         XCODE_SCHEME: "PervinMuellim"
+        APP_STORE_APPLE_ID: "6760615345"
     scripts:
       - name: Build iOS
         script: |
@@ -25,13 +28,4 @@ workflows:
       - name: Export IPA
         script: |
           xcodebuild -exportArchive \
-            -archivePath build/PervinMuellim.xcarchive \
-            -exportOptionsPlist exportOptions.plist \
-            -exportPath build/
-    artifacts:
-      - build/*.ipa
-    publishing:
-      app_store_connect:
-        auth: integration
-        submit_to_testflight: false
-        submit_to_app_store: false
+            -archivePath bui
