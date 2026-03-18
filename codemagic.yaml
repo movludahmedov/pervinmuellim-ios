@@ -3,7 +3,7 @@ workflows:
     name: Pervin Muellim iOS
     max_build_duration: 60
     environment:
-      xcode: 16.2
+      xcode: "16.2"
       ios_signing:
         distribution_type: app_store
         bundle_identifier: az.pervinmuellim.app
@@ -27,7 +27,7 @@ workflows:
             -archivePath build/PervinMuellim.xcarchive \
             -exportOptionsPlist exportOptions.plist \
             -exportPath build/
-     - name: Upload to App Store
+      - name: Upload to App Store
         script: |
           mkdir -p ~/.appstoreconnect/private_keys
           printf '%s' "$APP_STORE_CONNECT_PUBLISHER_PRIVATE_KEY" > ~/.appstoreconnect/private_keys/AuthKey_DJRA7MG4HM.p8
