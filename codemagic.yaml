@@ -27,10 +27,11 @@ workflows:
             -archivePath build/PervinMuellim.xcarchive \
             -exportOptionsPlist exportOptions.plist \
             -exportPath build/
-      - name: Upload to App Store
+     - name: Upload to App Store
         script: |
           mkdir -p ~/.appstoreconnect/private_keys
-          echo "$APP_STORE_CONNECT_PUBLISHER_PRIVATE_KEY" > ~/.appstoreconnect/private_keys/AuthKey_DJRA7MG4HM.p8
+          printf '%s' "$APP_STORE_CONNECT_PUBLISHER_PRIVATE_KEY" > ~/.appstoreconnect/private_keys/AuthKey_DJRA7MG4HM.p8
+          cat ~/.appstoreconnect/private_keys/AuthKey_DJRA7MG4HM.p8
           xcrun altool \
             --upload-app \
             --type ios \
