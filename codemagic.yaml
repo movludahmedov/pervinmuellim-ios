@@ -1,3 +1,4 @@
+@'
 workflows:
   ios-workflow:
     name: Pervin Muellim iOS
@@ -30,7 +31,7 @@ workflows:
       - name: Upload to App Store
         script: |
           mkdir -p ~/.appstoreconnect/private_keys
-          printf '%s' "$APP_STORE_CONNECT_PUBLISHER_PRIVATE_KEY" > ~/.appstoreconnect/private_keys/AuthKey_DJRA7MG4HM.p8
+          echo "$ASC_PRIVATE_KEY_BASE64" | base64 --decode > ~/.appstoreconnect/private_keys/AuthKey_DJRA7MG4HM.p8
           cat ~/.appstoreconnect/private_keys/AuthKey_DJRA7MG4HM.p8
           xcrun altool \
             --upload-app \
@@ -41,3 +42,4 @@ workflows:
             --verbose
     artifacts:
       - build/*.ipa
+'@ | Set-Content "C:\PervinMuellimIOS\codemagic.yaml" -Encoding UTF8
