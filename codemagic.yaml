@@ -1,4 +1,3 @@
-@'
 workflows:
   ios-workflow:
     name: Pervin Muellim iOS
@@ -42,4 +41,3 @@ workflows:
             --verbose
     artifacts:
       - build/*.ipa
-'@ | Set-Content "C:\PervinMuellimIOS\codemagic.yaml" -Encoding UTF8
