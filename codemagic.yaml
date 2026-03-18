@@ -10,7 +10,6 @@ workflows:
       vars:
         XCODE_PROJECT: "PervinMuellim.xcodeproj"
         XCODE_SCHEME: "PervinMuellim"
-        APP_STORE_APPLE_ID: "6760615345"
     scripts:
       - name: Build iOS
         script: |
@@ -28,12 +27,16 @@ workflows:
             -archivePath build/PervinMuellim.xcarchive \
             -exportOptionsPlist exportOptions.plist \
             -exportPath build/
+      - name: Upload to App Store
+        script: |
+          echo "$APP_STORE_CONNECT_PUBLISHER_PRIVATE_KEY" > /tmp/AuthKey_DJRA7MG4HM.p8
+          xcrun altool \
+            --upload-app \
+            --type ios \
+            --file "build/Pervin Muellim.ipa" \
+            --apiKey "DJRA7MG4HM" \
+            --apiIssuer "f7f1d0af-5912-4f29-a83b-c24a32e55666" \
+            --private-key /tmp/AuthKey_DJRA7MG4HM.p8 \
+            --verbose
     artifacts:
       - build/*.ipa
-    publishing:
-      app_store_connect:
-        api_key: $APP_STORE_CONNECT_PUBLISHER_PRIVATE_KEY
-        key_id: $APP_STORE_CONNECT_KEY_IDENTIFIER
-        issuer_id: $APP_STORE_CONNECT_ISSUER_ID
-        submit_to_testflight: false
-        submit_to_app_store: false
