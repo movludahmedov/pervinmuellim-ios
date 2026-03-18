@@ -3,6 +3,7 @@ workflows:
     name: Pervin Muellim iOS
     max_build_duration: 60
     environment:
+      xcode: 16.2
       ios_signing:
         distribution_type: app_store
         bundle_identifier: az.pervinmuellim.app
@@ -31,7 +32,7 @@ workflows:
       - build/*.ipa
     publishing:
       app_store_connect:
-        api_key: $APP_STORE_CONNECT_PRIVATE_KEY
+        api_key: $APP_STORE_CONNECT_PUBLISHER_PRIVATE_KEY
         key_id: $APP_STORE_CONNECT_KEY_IDENTIFIER
         issuer_id: $APP_STORE_CONNECT_ISSUER_ID
         submit_to_testflight: false
