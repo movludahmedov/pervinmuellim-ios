@@ -29,14 +29,14 @@ workflows:
             -exportPath build/
       - name: Upload to App Store
         script: |
-          echo "$APP_STORE_CONNECT_PUBLISHER_PRIVATE_KEY" > /tmp/AuthKey_DJRA7MG4HM.p8
+          mkdir -p ~/.appstoreconnect/private_keys
+          echo "$APP_STORE_CONNECT_PUBLISHER_PRIVATE_KEY" > ~/.appstoreconnect/private_keys/AuthKey_DJRA7MG4HM.p8
           xcrun altool \
             --upload-app \
             --type ios \
             --file "build/Pervin Muellim.ipa" \
             --apiKey "DJRA7MG4HM" \
             --apiIssuer "f7f1d0af-5912-4f29-a83b-c24a32e55666" \
-            --private-key /tmp/AuthKey_DJRA7MG4HM.p8 \
             --verbose
     artifacts:
       - build/*.ipa
