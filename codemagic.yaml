@@ -27,14 +27,21 @@ workflows:
             -archivePath build/PervinMuellim.xcarchive \
             -exportOptionsPlist exportOptions.plist \
             -exportPath build/
-      - name: Upload to App Store
-        script: |
-          printf '%s' "$ASC_PRIVATE_KEY_BASE64" | base64 --decode > /tmp/AuthKey.p8
-          cat /tmp/AuthKey.p8
-          app-store-connect publish \
-            --path "build/Pervin Muellim.ipa" \
-            --key-id "DJRA7MG4HM" \
-            --issuer-id "f7f1d0af-5912-4f29-a83b-c24a32e55666" \
-            --private-key @file:/tmp/AuthKey.p8
+     - name: Upload to App Store
+  script: |
+    # Boşluqları və newline-ları təmizlə, sonra decode et
+    printf '%s' "$ASC_PRIVATE_KEY_BASE64" | tr -d ' \n\r' | base64 --decode > /tmp/AuthKey.p8
+    
+    # Faylın düzgün yarandığını yoxla
+    echo "=== AuthKey.p8 content ==="
+    cat /tmp/AuthKey.p8
+    echo "=== File size ==="
+    wc -c /tmp/AuthKey.p8
+    
+    app-store-connect publish \
+      --path "build/Pervin Muellim.ipa" \
+      --key-id "DJRA7MG4HM" \
+      --issuer-id "f7f1d0af-5912-4f29-a83b-c24a32e55666" \
+      --private-key @file:/tmp/AuthKey.p8
     artifacts:
       - build/*.ipa
