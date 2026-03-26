@@ -27,9 +27,10 @@ workflows:
             -archivePath build/PervinMuellim.xcarchive \
             -exportOptionsPlist exportOptions.plist \
             -exportPath build/
-      - name: Upload to App Store
+  - name: Upload to App Store
         script: |
-          echo "$ASC_PRIVATE_KEY_BASE64" | base64 --decode > /tmp/AuthKey.p8
+          printf '%s' "$ASC_PRIVATE_KEY_BASE64" | base64 --decode > /tmp/AuthKey.p8
+          cat /tmp/AuthKey.p8
           app-store-connect publish \
             --path "build/Pervin Muellim.ipa" \
             --key-id "DJRA7MG4HM" \
