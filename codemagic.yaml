@@ -2,6 +2,8 @@ workflows:
   ios-workflow:
     name: "Pervin Muellim iOS"
     max_build_duration: 60
+    integrations:
+      app_store_connect: "DJRA7MG4HM"
     environment:
       xcode: "16.2"
       ios_signing:
