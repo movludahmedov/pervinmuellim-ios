@@ -17,6 +17,10 @@ BB1234561A680F5B00A75B9A = {
 isa = PBXBuildFile;
 fileRef = BB1234551A680F5B00A75B9A;
 };
+CC1234561A680F5B00A75B9A = {
+isa = PBXBuildFile;
+fileRef = CC1234571A680F5B00A75B9A;
+};
 13B07F851A680F5B00A75B9A = {
 isa = PBXFileReference;
 lastKnownFileType = "wrapper.framework";
@@ -49,6 +53,12 @@ lastKnownFileType = text.plist.xml;
 path = Info.plist;
 sourceTree = "<group>";
 };
+CC1234571A680F5B00A75B9A = {
+isa = PBXFileReference;
+lastKnownFileType = folder.assetcatalog;
+path = Assets.xcassets;
+sourceTree = "<group>";
+};
 DD1234551A680F5B00A75B9A = {
 isa = PBXFrameworksBuildPhase;
 buildActionMask = 2147483647;
@@ -71,6 +81,7 @@ children = (
 AA1234551A680F5B00A75B9A,
 BB1234551A680F5B00A75B9A,
 CC1234551A680F5B00A75B9A,
+CC1234571A680F5B00A75B9A,
 );
 path = PervinMuellim;
 sourceTree = "<group>";
@@ -131,6 +142,7 @@ A31234561A680F5B00A75B9A = {
 isa = PBXResourcesBuildPhase;
 buildActionMask = 2147483647;
 files = (
+CC1234561A680F5B00A75B9A,
 );
 runOnlyForDeploymentPostprocessing = 0;
 };
