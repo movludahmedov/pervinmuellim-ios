@@ -1,39 +1,48 @@
-﻿import UIKit
+import UIKit
 import WebKit
 
-class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
+class ViewController: UIViewController, WKNavigationDelegate {
     
     var webView: WKWebView!
+    
+    override func loadView() {
+        let config = WKWebViewConfiguration()
+        config.allowsInlineMediaPlayback = true
+        
+        webView = WKWebView(frame: .zero, configuration: config)
+        webView.navigationDelegate = self
+        webView.allowsBackForwardNavigationGestures = true
+        webView.scrollView.bounces = false
+        view = webView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let config = WKWebViewConfiguration()
-        config.allowsInlineMediaPlayback = true
-        config.mediaTypesRequiringUserActionForPlayback = []
-        config.preferences.javaScriptEnabled = true
+        // Status bar üçün background
+        view.backgroundColor = UIColor.white
         
-        let dataStore = WKWebsiteDataStore.default()
-        config.websiteDataStore = dataStore
-        
-        webView = WKWebView(frame: view.bounds, configuration: config)
-        webView.navigationDelegate = self
-        webView.uiDelegate = self
-        webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        webView.scrollView.bounces = false
-        view.addSubview(webView)
-        
-        let url = URL(string: "https://pervinmuellim.az/")!
-        webView.load(URLRequest(url: url))
+        guard let url = URL(string: "https://pervinmuellim.az") else { return }
+        let request = URLRequest(
+            url: url,
+            cachePolicy: .reloadIgnoringLocalCacheData,
+            timeoutInterval: 30
+        )
+        webView.load(request)
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        webView.frame = view.bounds
-    }
-    
+    // Yüklənmə xətası — offline səhifə göstər
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-        let html = "<html><body><h2>nternet bağlantısı yoxdur</h2></body></html>"
+        let html = """
+        <html>
+        <body style='display:flex;justify-content:center;align-items:center;height:100vh;font-family:Arial;'>
+        <div style='text-align:center'>
+        <h2>Bağlantı xətası</h2>
+        <p>İnternet bağlantınızı yoxlayın</p>
+        </div>
+        </body>
+        </html>
+        """
         webView.loadHTMLString(html, baseURL: nil)
     }
 }
