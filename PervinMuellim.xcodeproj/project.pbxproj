@@ -21,6 +21,10 @@ CC1234561A680F5B00A75B9A = {
 isa = PBXBuildFile;
 fileRef = CC1234571A680F5B00A75B9A;
 };
+LS1234561A680F5B00A75B9A = {
+isa = PBXBuildFile;
+fileRef = LS1234551A680F5B00A75B9A;
+};
 13B07F851A680F5B00A75B9A = {
 isa = PBXFileReference;
 lastKnownFileType = "wrapper.framework";
@@ -59,6 +63,12 @@ lastKnownFileType = folder.assetcatalog;
 path = Assets.xcassets;
 sourceTree = "<group>";
 };
+LS1234551A680F5B00A75B9A = {
+isa = PBXFileReference;
+lastKnownFileType = file.storyboard;
+path = LaunchScreen.storyboard;
+sourceTree = "<group>";
+};
 DD1234551A680F5B00A75B9A = {
 isa = PBXFrameworksBuildPhase;
 buildActionMask = 2147483647;
@@ -82,6 +92,7 @@ AA1234551A680F5B00A75B9A,
 BB1234551A680F5B00A75B9A,
 CC1234551A680F5B00A75B9A,
 CC1234571A680F5B00A75B9A,
+LS1234551A680F5B00A75B9A,
 );
 path = PervinMuellim;
 sourceTree = "<group>";
@@ -143,6 +154,7 @@ isa = PBXResourcesBuildPhase;
 buildActionMask = 2147483647;
 files = (
 CC1234561A680F5B00A75B9A,
+LS1234561A680F5B00A75B9A,
 );
 runOnlyForDeploymentPostprocessing = 0;
 };
@@ -162,72 +174,4 @@ A81234561A680F5B00A75B9A,
 A91234561A680F5B00A75B9A,
 );
 defaultConfigurationIsVisible = 0;
-defaultConfigurationName = Release;
-};
-A61234561A680F5B00A75B9A = {
-isa = XCBuildConfiguration;
-buildSettings = {
-ALWAYS_SEARCH_USER_PATHS = NO;
-SWIFT_VERSION = 5.0;
-IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-SDKROOT = iphoneos;
-SUPPORTED_PLATFORMS = iphoneos;
-CURRENT_PROJECT_VERSION = 3;
-};
-name = Debug;
-};
-A71234561A680F5B00A75B9A = {
-isa = XCBuildConfiguration;
-buildSettings = {
-ALWAYS_SEARCH_USER_PATHS = NO;
-SWIFT_VERSION = 5.0;
-IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-SDKROOT = iphoneos;
-SUPPORTED_PLATFORMS = iphoneos;
-CURRENT_PROJECT_VERSION = 3;
-};
-name = Release;
-};
-A81234561A680F5B00A75B9A = {
-isa = XCBuildConfiguration;
-buildSettings = {
-ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-INFOPLIST_FILE = "PervinMuellim/Info.plist";
-PRODUCT_BUNDLE_IDENTIFIER = "az.pervinmuellim.app";
-DEVELOPMENT_TEAM = TA5QW3L6ZW;
-CODE_SIGN_IDENTITY = "iPhone Distribution";
-CODE_SIGN_STYLE = Manual;
-PROVISIONING_PROFILE_SPECIFIER = "PervinMuellim AppStore";
-PRODUCT_NAME = PervinMuellim;
-SWIFT_VERSION = 5.0;
-TARGETED_DEVICE_FAMILY = "1,2";
-IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-SDKROOT = iphoneos;
-SUPPORTED_PLATFORMS = iphoneos;
-CURRENT_PROJECT_VERSION = 3;
-};
-name = Debug;
-};
-A91234561A680F5B00A75B9A = {
-isa = XCBuildConfiguration;
-buildSettings = {
-ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-INFOPLIST_FILE = "PervinMuellim/Info.plist";
-PRODUCT_BUNDLE_IDENTIFIER = "az.pervinmuellim.app";
-DEVELOPMENT_TEAM = TA5QW3L6ZW;
-CODE_SIGN_IDENTITY = "iPhone Distribution";
-CODE_SIGN_STYLE = Manual;
-PROVISIONING_PROFILE_SPECIFIER = "PervinMuellim AppStore";
-PRODUCT_NAME = PervinMuellim;
-SWIFT_VERSION = 5.0;
-TARGETED_DEVICE_FAMILY = "1,2";
-IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-SDKROOT = iphoneos;
-SUPPORTED_PLATFORMS = iphoneos;
-CURRENT_PROJECT_VERSION = 3;
-};
-name = Release;
-};
-};
-rootObject = A41234561A680F5B00A75B9A;
-}
+defaultConfigurationName = Re
