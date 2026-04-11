@@ -19,6 +19,9 @@ workflows:
           /usr/libexec/PlistBuddy -c "Add :UIDeviceFamily:1 integer 2" "$XCODE_PROJECT/PervinMuellim/Info.plist" 2>/dev/null || true
           /usr/libexec/PlistBuddy -c "Delete :UILaunchStoryboardName" "$XCODE_PROJECT/PervinMuellim/Info.plist" 2>/dev/null || true
           /usr/libexec/PlistBuddy -c "Add :UILaunchStoryboardName string LaunchScreen" "$XCODE_PROJECT/PervinMuellim/Info.plist" 2>/dev/null || true
+      - name: "Increment build number"
+        script: |
+          agvtool next-version -all
       - name: "Build iOS"
         script: |
           xcodebuild \
