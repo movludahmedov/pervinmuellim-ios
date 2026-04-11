@@ -5,7 +5,7 @@ workflows:
     integrations:
       app_store_connect: Codemagic
     environment:
-      xcode: "16.2"
+      xcode: latest
       ios_signing:
         distribution_type: app_store
         bundle_identifier: az.pervinmuellim.app
@@ -13,6 +13,12 @@ workflows:
         XCODE_PROJECT: "PervinMuellim.xcodeproj"
         XCODE_SCHEME: "PervinMuellim"
     scripts:
+      - name: "Fix iPad support"
+        script: |
+          /usr/libexec/PlistBuddy -c "Set :UIDeviceFamily:0 1" "$XCODE_PROJECT/PervinMuellim/Info.plist" 2>/dev/null || true
+          /usr/libexec/PlistBuddy -c "Add :UIDeviceFamily:1 integer 2" "$XCODE_PROJECT/PervinMuellim/Info.plist" 2>/dev/null || true
+          /usr/libexec/PlistBuddy -c "Delete :UILaunchStoryboardName" "$XCODE_PROJECT/PervinMuellim/Info.plist" 2>/dev/null || true
+          /usr/libexec/PlistBuddy -c "Add :UILaunchStoryboardName string LaunchScreen" "$XCODE_PROJECT/PervinMuellim/Info.plist" 2>/dev/null || true
       - name: "Build iOS"
         script: |
           xcodebuild \
