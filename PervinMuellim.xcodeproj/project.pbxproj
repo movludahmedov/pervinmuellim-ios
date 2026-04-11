@@ -1,229 +1,54 @@
-// !$*UTF8*$!
-{
-archiveVersion = 1;
-classes = {
-};
-objectVersion = 56;
-objects = {
-13B07F861A680F5B00A75B9A = {
-isa = PBXBuildFile;
-fileRef = 13B07F851A680F5B00A75B9A;
-};
-AA1234561A680F5B00A75B9A = {
-isa = PBXBuildFile;
-fileRef = AA1234551A680F5B00A75B9A;
-};
-BB1234561A680F5B00A75B9A = {
-isa = PBXBuildFile;
-fileRef = BB1234551A680F5B00A75B9A;
-};
-CC1234561A680F5B00A75B9A = {
-isa = PBXBuildFile;
-fileRef = CC1234571A680F5B00A75B9A;
-};
-13B07F851A680F5B00A75B9A = {
-isa = PBXFileReference;
-lastKnownFileType = "wrapper.framework";
-name = WebKit.framework;
-path = System/Library/Frameworks/WebKit.framework;
-sourceTree = SDKROOT;
-};
-13B07F951A680F5B00A75B9A = {
-isa = PBXFileReference;
-explicitFileType = wrapper.application;
-includeInIndex = 0;
-path = PervinMuellim.app;
-sourceTree = BUILT_PRODUCTS_DIR;
-};
-AA1234551A680F5B00A75B9A = {
-isa = PBXFileReference;
-lastKnownFileType = sourcecode.swift;
-path = AppDelegate.swift;
-sourceTree = "<group>";
-};
-BB1234551A680F5B00A75B9A = {
-isa = PBXFileReference;
-lastKnownFileType = sourcecode.swift;
-path = ViewController.swift;
-sourceTree = "<group>";
-};
-CC1234551A680F5B00A75B9A = {
-isa = PBXFileReference;
-lastKnownFileType = text.plist.xml;
-path = Info.plist;
-sourceTree = "<group>";
-};
-CC1234571A680F5B00A75B9A = {
-isa = PBXFileReference;
-lastKnownFileType = folder.assetcatalog;
-path = Assets.xcassets;
-sourceTree = "<group>";
-};
-DD1234551A680F5B00A75B9A = {
-isa = PBXFrameworksBuildPhase;
-buildActionMask = 2147483647;
-files = (
-13B07F861A680F5B00A75B9A,
-);
-runOnlyForDeploymentPostprocessing = 0;
-};
-EE1234551A680F5B00A75B9A = {
-isa = PBXGroup;
-children = (
-FF1234551A680F5B00A75B9A,
-13B07F951A680F5B00A75B9A,
-);
-sourceTree = "<group>";
-};
-FF1234551A680F5B00A75B9A = {
-isa = PBXGroup;
-children = (
-AA1234551A680F5B00A75B9A,
-BB1234551A680F5B00A75B9A,
-CC1234551A680F5B00A75B9A,
-CC1234571A680F5B00A75B9A,
-);
-path = PervinMuellim;
-sourceTree = "<group>";
-};
-A01234561A680F5B00A75B9A = {
-isa = PBXNativeTarget;
-buildConfigurationList = A11234561A680F5B00A75B9A;
-buildPhases = (
-A21234561A680F5B00A75B9A,
-DD1234551A680F5B00A75B9A,
-A31234561A680F5B00A75B9A,
-);
-buildRules = ();
-dependencies = ();
-name = PervinMuellim;
-productName = PervinMuellim;
-productReference = 13B07F951A680F5B00A75B9A;
-productType = "com.apple.product-type.application";
-};
-A41234561A680F5B00A75B9A = {
-isa = PBXProject;
-attributes = {
-LastSwiftUpdateCheck = 1500;
-LastUpgradeCheck = 1500;
-TargetAttributes = {
-A01234561A680F5B00A75B9A = {
-CreatedOnToolsVersion = 15.0;
-};
-};
-};
-buildConfigurationList = A51234561A680F5B00A75B9A;
-compatibilityVersion = "Xcode 14.0";
-developmentRegion = az;
-hasScannedForEncodings = 0;
-knownRegions = (
-az,
-en,
-Base,
-);
-mainGroup = EE1234551A680F5B00A75B9A;
-productRefGroup = EE1234551A680F5B00A75B9A;
-projectDirPath = "";
-projectRoot = "";
-targets = (
-A01234561A680F5B00A75B9A,
-);
-};
-A21234561A680F5B00A75B9A = {
-isa = PBXSourcesBuildPhase;
-buildActionMask = 2147483647;
-files = (
-AA1234561A680F5B00A75B9A,
-BB1234561A680F5B00A75B9A,
-);
-runOnlyForDeploymentPostprocessing = 0;
-};
-A31234561A680F5B00A75B9A = {
-isa = PBXResourcesBuildPhase;
-buildActionMask = 2147483647;
-files = (
-CC1234561A680F5B00A75B9A,
-);
-runOnlyForDeploymentPostprocessing = 0;
-};
-A51234561A680F5B00A75B9A = {
-isa = XCConfigurationList;
-buildConfigurations = (
-A61234561A680F5B00A75B9A,
-A71234561A680F5B00A75B9A,
-);
-defaultConfigurationIsVisible = 0;
-defaultConfigurationName = Release;
-};
-A11234561A680F5B00A75B9A = {
-isa = XCConfigurationList;
-buildConfigurations = (
-A81234561A680F5B00A75B9A,
-A91234561A680F5B00A75B9A,
-);
-defaultConfigurationIsVisible = 0;
-defaultConfigurationName = Release;
-};
-A61234561A680F5B00A75B9A = {
-isa = XCBuildConfiguration;
-buildSettings = {
-ALWAYS_SEARCH_USER_PATHS = NO;
-SWIFT_VERSION = 5.0;
-IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-SDKROOT = iphoneos;
-SUPPORTED_PLATFORMS = iphoneos;
-};
-name = Debug;
-};
-A71234561A680F5B00A75B9A = {
-isa = XCBuildConfiguration;
-buildSettings = {
-ALWAYS_SEARCH_USER_PATHS = NO;
-SWIFT_VERSION = 5.0;
-IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-SDKROOT = iphoneos;
-SUPPORTED_PLATFORMS = iphoneos;
-};
-name = Release;
-};
-A81234561A680F5B00A75B9A = {
-isa = XCBuildConfiguration;
-buildSettings = {
-ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-INFOPLIST_FILE = "PervinMuellim/Info.plist";
-PRODUCT_BUNDLE_IDENTIFIER = "az.pervinmuellim.app";
-DEVELOPMENT_TEAM = TA5QW3L6ZW;
-CODE_SIGN_IDENTITY = "iPhone Distribution";
-CODE_SIGN_STYLE = Manual;
-PROVISIONING_PROFILE_SPECIFIER = "PervinMuellim AppStore";
-PRODUCT_NAME = PervinMuellim;
-SWIFT_VERSION = 5.0;
-TARGETED_DEVICE_FAMILY = "1";
-IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-SDKROOT = iphoneos;
-SUPPORTED_PLATFORMS = iphoneos;
-};
-name = Debug;
-};
-A91234561A680F5B00A75B9A = {
-isa = XCBuildConfiguration;
-buildSettings = {
-ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-INFOPLIST_FILE = "PervinMuellim/Info.plist";
-PRODUCT_BUNDLE_IDENTIFIER = "az.pervinmuellim.app";
-DEVELOPMENT_TEAM = TA5QW3L6ZW;
-CODE_SIGN_IDENTITY = "iPhone Distribution";
-CODE_SIGN_STYLE = Manual;
-PROVISIONING_PROFILE_SPECIFIER = "PervinMuellim AppStore";
-PRODUCT_NAME = PervinMuellim;
-SWIFT_VERSION = 5.0;
-TARGETED_DEVICE_FAMILY = "1";
-IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-SDKROOT = iphoneos;
-SUPPORTED_PLATFORMS = iphoneos;
-};
-name = Release;
-};
-};
-rootObject = A41234561A680F5B00A75B9A;
-}
+workflows:
+  ios-workflow:
+    name: "Pervin Muellim iOS"
+    max_build_duration: 60
+    integrations:
+      app_store_connect: Codemagic
+    environment:
+      xcode: latest
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: az.pervinmuellim.app
+      vars:
+        XCODE_PROJECT: "PervinMuellim.xcodeproj"
+        XCODE_SCHEME: "PervinMuellim"
+    scripts:
+      - name: "Increment build number"
+        script: |
+          BUILD_NUMBER=$(date +%s)
+          echo "Setting build number to: $BUILD_NUMBER"
+          PBXPROJ="$XCODE_PROJECT/project.pbxproj"
+          sed -i "" "s/CURRENT_PROJECT_VERSION = [0-9]*/CURRENT_PROJECT_VERSION = $BUILD_NUMBER/g" "$PBXPROJ"
+          sed -i "" "s/CFBundleVersion = [0-9]*/CFBundleVersion = $BUILD_NUMBER/g" "$PBXPROJ"
+          echo "Done. Verifying:"
+          grep "CURRENT_PROJECT_VERSION" "$PBXPROJ"
+          grep "CFBundleVersion" "$PBXPROJ"
+      - name: "Fix iPad support"
+        script: |
+          INFO_PLIST=$(find . -name "Info.plist" -not -path "*/build/*" -not -path "*/.git/*" | head -1)
+          echo "Found: $INFO_PLIST"
+          /usr/libexec/PlistBuddy -c "Set :UIDeviceFamily:0 1" "$INFO_PLIST" 2>/dev/null || true
+          /usr/libexec/PlistBuddy -c "Add :UIDeviceFamily:1 integer 2" "$INFO_PLIST" 2>/dev/null || true
+      - name: "Build iOS"
+        script: |
+          xcodebuild \
+            -project "$XCODE_PROJECT" \
+            -scheme "$XCODE_SCHEME" \
+            -configuration Release \
+            -sdk iphoneos \
+            -destination "generic/platform=iOS" \
+            -archivePath build/PervinMuellim.xcarchive \
+            archive
+      - name: "Export IPA"
+        script: |
+          xcodebuild -exportArchive \
+            -archivePath build/PervinMuellim.xcarchive \
+            -exportOptionsPlist exportOptions.plist \
+            -exportPath build/
+    artifacts:
+      - build/*.ipa
+    publishing:
+      app_store_connect:
+        auth: integration
+        submit_to_testflight: false
+        submit_to_app_store: false
