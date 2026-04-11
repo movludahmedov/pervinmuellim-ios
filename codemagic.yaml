@@ -13,6 +13,13 @@ workflows:
         XCODE_PROJECT: "PervinMuellim.xcodeproj"
         XCODE_SCHEME: "PervinMuellim"
     scripts:
+      - name: "Set build number"
+        script: |
+          BUILD_NUMBER=$(date +%s)
+          echo "Build number: $BUILD_NUMBER"
+          /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $BUILD_NUMBER" "PervinMuellim/Info.plist"
+          echo "Verification:"
+          /usr/libexec/PlistBuddy -c "Print :CFBundleVersion" "PervinMuellim/Info.plist"
       - name: "Build iOS"
         script: |
           xcodebuild \
