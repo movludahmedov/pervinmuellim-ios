@@ -13,16 +13,17 @@ workflows:
         XCODE_PROJECT: "PervinMuellim.xcodeproj"
         XCODE_SCHEME: "PervinMuellim"
     scripts:
+      - name: "Find Info.plist and increment build number"
+        script: |
+          INFO_PLIST=$(find . -name "Info.plist" -not -path "*/build/*" -not -path "*/.git/*" | head -1)
+          echo "Found Info.plist at: $INFO_PLIST"
+          BUILD_NUMBER=$(($(date +%s)))
+          /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $BUILD_NUMBER" "$INFO_PLIST"
       - name: "Fix iPad support"
         script: |
-          /usr/libexec/PlistBuddy -c "Set :UIDeviceFamily:0 1" "$XCODE_PROJECT/PervinMuellim/Info.plist" 2>/dev/null || true
-          /usr/libexec/PlistBuddy -c "Add :UIDeviceFamily:1 integer 2" "$XCODE_PROJECT/PervinMuellim/Info.plist" 2>/dev/null || true
-          /usr/libexec/PlistBuddy -c "Delete :UILaunchStoryboardName" "$XCODE_PROJECT/PervinMuellim/Info.plist" 2>/dev/null || true
-          /usr/libexec/PlistBuddy -c "Add :UILaunchStoryboardName string LaunchScreen" "$XCODE_PROJECT/PervinMuellim/Info.plist" 2>/dev/null || true
-      - name: "Increment build number"
-        script: |
-          BUILD_NUMBER=$(($(date +%s)))
-          /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $BUILD_NUMBER" "$XCODE_PROJECT/PervinMuellim/Info.plist"
+          INFO_PLIST=$(find . -name "Info.plist" -not -path "*/build/*" -not -path "*/.git/*" | head -1)
+          /usr/libexec/PlistBuddy -c "Set :UIDeviceFamily:0 1" "$INFO_PLIST" 2>/dev/null || true
+          /usr/libexec/PlistBuddy -c "Add :UIDeviceFamily:1 integer 2" "$INFO_PLIST" 2>/dev/null || true
       - name: "Build iOS"
         script: |
           xcodebuild \
