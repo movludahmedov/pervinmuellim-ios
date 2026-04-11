@@ -21,7 +21,8 @@ workflows:
           /usr/libexec/PlistBuddy -c "Add :UILaunchStoryboardName string LaunchScreen" "$XCODE_PROJECT/PervinMuellim/Info.plist" 2>/dev/null || true
       - name: "Increment build number"
         script: |
-          agvtool next-version -all
+          BUILD_NUMBER=$(($(date +%s)))
+          /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $BUILD_NUMBER" "$XCODE_PROJECT/PervinMuellim/Info.plist"
       - name: "Build iOS"
         script: |
           xcodebuild \
