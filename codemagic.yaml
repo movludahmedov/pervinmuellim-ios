@@ -16,10 +16,16 @@ workflows:
       - name: "Set build number"
         script: |
           BUILD_NUMBER=$(date +%s)
-          echo "Build number: $BUILD_NUMBER"
           /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $BUILD_NUMBER" "PervinMuellim/Info.plist"
-          echo "Verification:"
-          /usr/libexec/PlistBuddy -c "Print :CFBundleVersion" "PervinMuellim/Info.plist"
+      - name: "Generate iPad icons"
+        script: |
+          ICON_DIR="PervinMuellim/Assets.xcassets/AppIcon.appiconset"
+          SOURCE="$ICON_DIR/1024.png"
+          sips -z 20 20 "$SOURCE" --out "$ICON_DIR/20.png"
+          sips -z 29 29 "$SOURCE" --out "$ICON_DIR/29.png"
+          sips -z 76 76 "$SOURCE" --out "$ICON_DIR/76.png"
+          sips -z 152 152 "$SOURCE" --out "$ICON_DIR/152.png"
+          sips -z 167 167 "$SOURCE" --out "$ICON_DIR/167.png"
       - name: "Build iOS"
         script: |
           xcodebuild \
