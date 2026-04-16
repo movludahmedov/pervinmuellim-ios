@@ -21,10 +21,6 @@
 			isa = PBXBuildFile;
 			fileRef = CC1234571A680F5B00A75B9A;
 		};
-		LS1234561A680F5B00A75B9A = {
-			isa = PBXBuildFile;
-			fileRef = LS1234551A680F5B00A75B9A;
-		};
 		13B07F851A680F5B00A75B9A = {
 			isa = PBXFileReference;
 			lastKnownFileType = "wrapper.framework";
@@ -63,12 +59,6 @@
 			path = Assets.xcassets;
 			sourceTree = "<group>";
 		};
-		LS1234551A680F5B00A75B9A = {
-			isa = PBXFileReference;
-			lastKnownFileType = file.storyboard;
-			path = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 		DD1234551A680F5B00A75B9A = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -92,7 +82,6 @@
 				BB1234551A680F5B00A75B9A,
 				CC1234551A680F5B00A75B9A,
 				CC1234571A680F5B00A75B9A,
-				LS1234551A680F5B00A75B9A,
 			);
 			path = PervinMuellim;
 			sourceTree = "<group>";
@@ -154,7 +143,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC1234561A680F5B00A75B9A,
-				LS1234561A680F5B00A75B9A,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
