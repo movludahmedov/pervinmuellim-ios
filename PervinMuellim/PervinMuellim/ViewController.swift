@@ -1,4 +1,4 @@
-﻿import UIKit
+import UIKit
 import WebKit
 
 class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
@@ -11,29 +11,30 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
         let config = WKWebViewConfiguration()
         config.allowsInlineMediaPlayback = true
         config.mediaTypesRequiringUserActionForPlayback = []
-        config.preferences.javaScriptEnabled = true
         
         let dataStore = WKWebsiteDataStore.default()
         config.websiteDataStore = dataStore
         
-        webView = WKWebView(frame: view.bounds, configuration: config)
+        webView = WKWebView(frame: .zero, configuration: config)
         webView.navigationDelegate = self
         webView.uiDelegate = self
-        webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         webView.scrollView.bounces = false
+        webView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(webView)
+        
+        NSLayoutConstraint.activate([
+            webView.topAnchor.constraint(equalTo: view.topAnchor),
+            webView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            webView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            webView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
         
         let url = URL(string: "https://pervinmuellim.az/")!
         webView.load(URLRequest(url: url))
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        webView.frame = view.bounds
-    }
-    
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-        let html = "<html><body><h2>nternet bağlantısı yoxdur</h2></body></html>"
+        let html = "<html><body><h2>İnternet bağlantısı yoxdur</h2></body></html>"
         webView.loadHTMLString(html, baseURL: nil)
     }
 }
