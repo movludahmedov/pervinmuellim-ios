@@ -1,50 +1,74 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
+class ViewController: UIViewController {
     
     var webView: WKWebView!
+    var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .white
-        
+        view.backgroundColor = UIColor.white
+        setupWebView()
+        setupActivityIndicator()
+        loadWebsite()
+    }
+    
+    func setupWebView() {
         let config = WKWebViewConfiguration()
         config.allowsInlineMediaPlayback = true
         config.mediaTypesRequiringUserActionForPlayback = []
         
-        webView = WKWebView(frame: .zero, configuration: config)
+        webView = WKWebView(frame: view.bounds, configuration: config)
         webView.navigationDelegate = self
-        webView.uiDelegate = self
-        webView.scrollView.bounces = false
-        webView.translatesAutoresizingMaskIntoConstraints = false
-        webView.backgroundColor = .white
-        webView.isOpaque = false
+        webView.backgroundColor = UIColor.white
+        webView.scrollView.backgroundColor = UIColor.white
+        webView.isOpaque = true
+        webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(webView)
-        
-        NSLayoutConstraint.activate([
-            webView.topAnchor.constraint(equalTo: view.topAnchor),
-            webView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            webView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            webView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-        ])
-        
-        loadWebsite()
+    }
+    
+    func setupActivityIndicator() {
+        activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.center = view.center
+        activityIndicator.color = .gray
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.autoresizingMask = [
+            .flexibleTopMargin, .flexibleBottomMargin,
+            .flexibleLeftMargin, .flexibleRightMargin
+        ]
+        view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
     }
     
     func loadWebsite() {
-        guard let url = URL(string: "https://pervinmuellim.az/") else { return }
-        var request = URLRequest(url: url)
-        request.timeoutInterval = 30
+        guard let url = URL(string: "https://pervinmuellim.az") else { return }
+        let request = URLRequest(
+            url: url,
+            cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
+            timeoutInterval: 30
+        )
         webView.load(request)
+    }
+}
+
+extension ViewController: WKNavigationDelegate {
+    
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        activityIndicator.startAnimating()
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        activityIndicator.stopAnimating()
     }
     
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        activityIndicator.stopAnimating()
         showOfflinePage()
     }
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        activityIndicator.stopAnimating()
         showOfflinePage()
     }
     
@@ -54,19 +78,25 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
         <head>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <style>
-        body { font-family: -apple-system; text-align: center; padding: 50px; background: white; }
-        h2 { color: #333; }
-        p { color: #666; }
-        button { background: #007AFF; color: white; border: none; padding: 15px 30px; border-radius: 10px; font-size: 16px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system; display: flex; flex-direction: column;
+               align-items: center; justify-content: center; height: 100vh;
+               background: white; text-align: center; padding: 20px; }
+        h2 { color: #333; margin-bottom: 10px; font-size: 22px; }
+        p { color: #666; margin-bottom: 30px; font-size: 16px; }
+        button { background: #007AFF; color: white; border: none;
+                 padding: 15px 40px; border-radius: 12px; font-size: 17px; }
         </style>
         </head>
         <body>
         <h2>Bağlantı xətası</h2>
         <p>İnternet bağlantınızı yoxlayın</p>
-        <button onclick='window.location.reload()'>Yenidən cəhd et</button>
+        <button onclick='window.location.href="https://pervinmuellim.az"'>
+        Yenidən cəhd et
+        </button>
         </body>
         </html>
         """
-        webView.loadHTMLString(html, baseURL: nil)
+        webView.loadHTMLString(html, baseURL: URL(string: "https://pervinmuellim.az"))
     }
 }
