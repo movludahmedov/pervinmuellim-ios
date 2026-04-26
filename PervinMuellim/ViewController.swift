@@ -5,6 +5,8 @@ class ViewController: UIViewController {
     
     var webView: WKWebView!
     var activityIndicator: UIActivityIndicatorView!
+    var retryCount = 0
+    let maxRetry = 3
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,9 +48,21 @@ class ViewController: UIViewController {
         let request = URLRequest(
             url: url,
             cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
-            timeoutInterval: 30
+            timeoutInterval: 60
         )
         webView.load(request)
+    }
+    
+    func retryLoad() {
+        if retryCount < maxRetry {
+            retryCount += 1
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                self.loadWebsite()
+            }
+        } else {
+            activityIndicator.stopAnimating()
+            showOfflinePage()
+        }
     }
 }
 
@@ -59,17 +73,16 @@ extension ViewController: WKNavigationDelegate {
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        retryCount = 0
         activityIndicator.stopAnimating()
     }
     
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-        activityIndicator.stopAnimating()
-        showOfflinePage()
+        retryLoad()
     }
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        activityIndicator.stopAnimating()
-        showOfflinePage()
+        retryLoad()
     }
     
     func showOfflinePage() {
@@ -89,10 +102,10 @@ extension ViewController: WKNavigationDelegate {
         </style>
         </head>
         <body>
-        <h2>Bağlantı xətası</h2>
-        <p>İnternet bağlantınızı yoxlayın</p>
+        <h2>Baglanti xetasi</h2>
+        <p>Internet baglantinizi yoxlayin</p>
         <button onclick='window.location.href="https://pervinmuellim.az"'>
-        Yenidən cəhd et
+        Yeniden cehed et
         </button>
         </body>
         </html>
