@@ -17,6 +17,12 @@ workflows:
         script: |
           BUILD_NUMBER=$(date +%s)
           /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $BUILD_NUMBER" "PervinMuellim/PervinMuellim/Info.plist"
+      - name: "Copy source files"
+        script: |
+          cp PervinMuellim/PervinMuellim/AppDelegate.swift PervinMuellim/AppDelegate.swift
+          cp PervinMuellim/PervinMuellim/ViewController.swift PervinMuellim/ViewController.swift
+          cp PervinMuellim/PervinMuellim/SceneDelegate.swift PervinMuellim/SceneDelegate.swift
+          cp PervinMuellim/PervinMuellim/Info.plist PervinMuellim/Info.plist
       - name: "Generate iPad icons"
         script: |
           ICON_DIR="PervinMuellim/Assets.xcassets/AppIcon.appiconset"
