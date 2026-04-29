@@ -21,6 +21,10 @@
 			isa = PBXBuildFile;
 			fileRef = CC1234571A680F5B00A75B9A;
 		};
+		SD1234561A680F5B00A75B9A = {
+			isa = PBXBuildFile;
+			fileRef = SD1234551A680F5B00A75B9A;
+		};
 		13B07F851A680F5B00A75B9A = {
 			isa = PBXFileReference;
 			lastKnownFileType = "wrapper.framework";
@@ -45,6 +49,12 @@
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.swift;
 			path = ViewController.swift;
+			sourceTree = "<group>";
+		};
+		SD1234551A680F5B00A75B9A = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = SceneDelegate.swift;
 			sourceTree = "<group>";
 		};
 		CC1234551A680F5B00A75B9A = {
@@ -80,6 +90,7 @@
 			children = (
 				AA1234551A680F5B00A75B9A,
 				BB1234551A680F5B00A75B9A,
+				SD1234551A680F5B00A75B9A,
 				CC1234551A680F5B00A75B9A,
 				CC1234571A680F5B00A75B9A,
 			);
@@ -135,6 +146,7 @@
 			files = (
 				AA1234561A680F5B00A75B9A,
 				BB1234561A680F5B00A75B9A,
+				SD1234561A680F5B00A75B9A,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,7 +204,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "PervinMuellim/Info.plist";
+				INFOPLIST_FILE = "PervinMuellim/PervinMuellim/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "az.pervinmuellim.app";
 				DEVELOPMENT_TEAM = TA5QW3L6ZW;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
@@ -212,7 +224,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "PervinMuellim/Info.plist";
+				INFOPLIST_FILE = "PervinMuellim/PervinMuellim/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "az.pervinmuellim.app";
 				DEVELOPMENT_TEAM = TA5QW3L6ZW;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
