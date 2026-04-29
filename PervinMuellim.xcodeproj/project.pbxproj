@@ -204,7 +204,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "PervinMuellim/PervinMuellim/Info.plist";
+				INFOPLIST_FILE = "PervinMuellim/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "az.pervinmuellim.app";
 				DEVELOPMENT_TEAM = TA5QW3L6ZW;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
@@ -224,7 +224,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "PervinMuellim/PervinMuellim/Info.plist";
+				INFOPLIST_FILE = "PervinMuellim/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "az.pervinmuellim.app";
 				DEVELOPMENT_TEAM = TA5QW3L6ZW;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
