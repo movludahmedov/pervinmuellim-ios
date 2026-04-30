@@ -42,31 +42,36 @@
 		AA1234551A680F5B00A75B9A = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.swift;
-			path = AppDelegate.swift;
+			name = AppDelegate.swift;
+			path = PervinMuellim/AppDelegate.swift;
 			sourceTree = "<group>";
 		};
 		BB1234551A680F5B00A75B9A = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.swift;
-			path = ViewController.swift;
+			name = ViewController.swift;
+			path = PervinMuellim/ViewController.swift;
 			sourceTree = "<group>";
 		};
 		SD1234551A680F5B00A75B9A = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.swift;
-			path = SceneDelegate.swift;
+			name = SceneDelegate.swift;
+			path = PervinMuellim/SceneDelegate.swift;
 			sourceTree = "<group>";
 		};
 		CC1234551A680F5B00A75B9A = {
 			isa = PBXFileReference;
 			lastKnownFileType = text.plist.xml;
-			path = Info.plist;
+			name = Info.plist;
+			path = PervinMuellim/Info.plist;
 			sourceTree = "<group>";
 		};
 		CC1234571A680F5B00A75B9A = {
 			isa = PBXFileReference;
 			lastKnownFileType = folder.assetcatalog;
-			path = Assets.xcassets;
+			name = Assets.xcassets;
+			path = PervinMuellim/Assets.xcassets;
 			sourceTree = "<group>";
 		};
 		DD1234551A680F5B00A75B9A = {
@@ -94,6 +99,7 @@
 				CC1234551A680F5B00A75B9A,
 				CC1234571A680F5B00A75B9A,
 			);
+			name = PervinMuellim;
 			path = PervinMuellim;
 			sourceTree = "<group>";
 		};
