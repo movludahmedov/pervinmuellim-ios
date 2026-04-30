@@ -43,6 +43,8 @@ workflows:
             -destination "generic/platform=iOS" \
             -archivePath "$CM_BUILD_DIR/build/PervinMuellim.xcarchive" \
             CODE_SIGN_STYLE=Automatic \
+            PROVISIONING_PROFILE_SPECIFIER="" \
+            PROVISIONING_PROFILE="" \
             archive
       - name: "Export IPA"
         script: |
