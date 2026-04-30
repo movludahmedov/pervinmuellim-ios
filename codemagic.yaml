@@ -5,7 +5,7 @@ workflows:
     integrations:
       app_store_connect: Codemagic
     environment:
-      xcode: latest
+      xcode: "26.4"
       ios_signing:
         distribution_type: app_store
         bundle_identifier: az.pervinmuellim.app
