@@ -33,6 +33,13 @@ workflows:
           sips -z 152 152 "$SOURCE" --out "$ICON_DIR/152.png"
           sips -z 167 167 "$SOURCE" --out "$ICON_DIR/167.png"
           sips -z 180 180 "$SOURCE" --out "$ICON_DIR/180.png"
+      - name: "Fix signing settings"
+        script: |
+          cd "$CM_BUILD_DIR"
+          sed -i '' 's/CODE_SIGN_STYLE = Manual/CODE_SIGN_STYLE = Automatic/g' PervinMuellim.xcodeproj/project.pbxproj
+          sed -i '' 's/CODE_SIGN_IDENTITY = "iPhone Distribution"/CODE_SIGN_IDENTITY = "Apple Distribution"/g' PervinMuellim.xcodeproj/project.pbxproj
+          sed -i '' '/PROVISIONING_PROFILE_SPECIFIER = "PervinMuellim AppStore"/d' PervinMuellim.xcodeproj/project.pbxproj
+          sed -i '' '/PROVISIONING_PROFILE = /d' PervinMuellim.xcodeproj/project.pbxproj
       - name: "Build iOS"
         script: |
           xcodebuild \
@@ -43,6 +50,7 @@ workflows:
             -destination "generic/platform=iOS" \
             -archivePath "$CM_BUILD_DIR/build/PervinMuellim.xcarchive" \
             CODE_SIGN_STYLE=Automatic \
+            CODE_SIGN_IDENTITY="Apple Distribution" \
             PROVISIONING_PROFILE_SPECIFIER="" \
             PROVISIONING_PROFILE="" \
             archive
