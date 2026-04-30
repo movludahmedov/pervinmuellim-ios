@@ -5,7 +5,7 @@ workflows:
     integrations:
       app_store_connect: Codemagic
     environment:
-      xcode: "26.4"
+      xcode: latest
       ios_signing:
         distribution_type: app_store
         bundle_identifier: az.pervinmuellim.app
@@ -16,22 +16,23 @@ workflows:
       - name: "Set build number"
         script: |
           BUILD_NUMBER=$(date +%s)
-          /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $BUILD_NUMBER" "PervinMuellim/PervinMuellim/Info.plist"
-      - name: "Copy source files"
+          /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $BUILD_NUMBER" "$CM_BUILD_DIR/PervinMuellim/Info.plist"
+      - name: "Generate icons"
         script: |
-          cp PervinMuellim/PervinMuellim/AppDelegate.swift PervinMuellim/AppDelegate.swift
-          cp PervinMuellim/PervinMuellim/ViewController.swift PervinMuellim/ViewController.swift
-          cp PervinMuellim/PervinMuellim/SceneDelegate.swift PervinMuellim/SceneDelegate.swift
-          cp PervinMuellim/PervinMuellim/Info.plist PervinMuellim/Info.plist
-      - name: "Generate iPad icons"
-        script: |
-          ICON_DIR="PervinMuellim/Assets.xcassets/AppIcon.appiconset"
+          ICON_DIR="$CM_BUILD_DIR/PervinMuellim/Assets.xcassets/AppIcon.appiconset"
           SOURCE="$ICON_DIR/1024.png"
-          sips -z 20 20 "$SOURCE" --out "$ICON_DIR/20.png"
-          sips -z 29 29 "$SOURCE" --out "$ICON_DIR/29.png"
-          sips -z 76 76 "$SOURCE" --out "$ICON_DIR/76.png"
+          sips -z 20 20   "$SOURCE" --out "$ICON_DIR/20.png"
+          sips -z 29 29   "$SOURCE" --out "$ICON_DIR/29.png"
+          sips -z 40 40   "$SOURCE" --out "$ICON_DIR/40.png"
+          sips -z 58 58   "$SOURCE" --out "$ICON_DIR/58.png"
+          sips -z 60 60   "$SOURCE" --out "$ICON_DIR/60.png"
+          sips -z 76 76   "$SOURCE" --out "$ICON_DIR/76.png"
+          sips -z 80 80   "$SOURCE" --out "$ICON_DIR/80.png"
+          sips -z 87 87   "$SOURCE" --out "$ICON_DIR/87.png"
+          sips -z 120 120 "$SOURCE" --out "$ICON_DIR/120.png"
           sips -z 152 152 "$SOURCE" --out "$ICON_DIR/152.png"
           sips -z 167 167 "$SOURCE" --out "$ICON_DIR/167.png"
+          sips -z 180 180 "$SOURCE" --out "$ICON_DIR/180.png"
       - name: "Build iOS"
         script: |
           xcodebuild \
@@ -40,14 +41,32 @@ workflows:
             -configuration Release \
             -sdk iphoneos \
             -destination "generic/platform=iOS" \
-            -archivePath build/PervinMuellim.xcarchive \
+            -archivePath "$CM_BUILD_DIR/build/PervinMuellim.xcarchive" \
+            CODE_SIGN_STYLE=Automatic \
             archive
       - name: "Export IPA"
         script: |
+          cat > /tmp/exportOptions.plist << 'EOF'
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+            <key>method</key>
+            <string>app-store</string>
+            <key>uploadBitcode</key>
+            <false/>
+            <key>uploadSymbols</key>
+            <true/>
+            <key>signingStyle</key>
+            <string>automatic</string>
+          </dict>
+          </plist>
+          EOF
+
           xcodebuild -exportArchive \
-            -archivePath build/PervinMuellim.xcarchive \
-            -exportOptionsPlist exportOptions.plist \
-            -exportPath build/
+            -archivePath "$CM_BUILD_DIR/build/PervinMuellim.xcarchive" \
+            -exportOptionsPlist /tmp/exportOptions.plist \
+            -exportPath "$CM_BUILD_DIR/build/"
     artifacts:
       - build/*.ipa
     publishing:
