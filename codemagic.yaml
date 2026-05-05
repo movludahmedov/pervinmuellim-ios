@@ -5,7 +5,7 @@ workflows:
     integrations:
       app_store_connect: Codemagic
     environment:
-      xcode: "26.4"
+      xcode: latest
       ios_signing:
         distribution_type: app_store
         bundle_identifier: az.pervinmuellim.app
@@ -13,6 +13,10 @@ workflows:
         XCODE_PROJECT: "PervinMuellim.xcodeproj"
         XCODE_SCHEME: "PervinMuellim"
     scripts:
+      - name: "Check Xcode version"
+        script: |
+          xcode-select --print-path
+          xcodebuild -version
       - name: "Set build number"
         script: |
           BUILD_NUMBER=$(date +%s)
