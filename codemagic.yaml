@@ -17,6 +17,9 @@ workflows:
         script: |
           BUILD_NUMBER=$(date +%s)
           /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $BUILD_NUMBER" "PervinMuellim/PervinMuellim/Info.plist"
+      - name: "Fix Info.plist location"
+        script: |
+          cp PervinMuellim/PervinMuellim/Info.plist PervinMuellim/Info.plist
       - name: "Generate iPad icons"
         script: |
           ICON_DIR="PervinMuellim/Assets.xcassets/AppIcon.appiconset"
