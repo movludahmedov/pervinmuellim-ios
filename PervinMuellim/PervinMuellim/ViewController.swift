@@ -21,14 +21,23 @@ class ViewController: UIViewController {
         config.allowsInlineMediaPlayback = true
         config.mediaTypesRequiringUserActionForPlayback = []
         
+        let preferences = WKWebpagePreferences()
+        preferences.allowsContentJavaScript = true
+        config.defaultWebpagePreferences = preferences
+        
+        let webPreferences = WKPreferences()
+        webPreferences.javaScriptCanOpenWindowsAutomatically = true
+        config.preferences = webPreferences
+        
         webView = WKWebView(frame: view.bounds, configuration: config)
         
-        webView.customUserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1"
+        webView.customUserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1"
         
         webView.navigationDelegate = self
+        webView.uiDelegate = self
         webView.backgroundColor = UIColor.white
         webView.scrollView.backgroundColor = UIColor.white
-        webView.isOpaque = true
+        webView.isOpaque = false
         webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(webView)
     }
@@ -48,11 +57,15 @@ class ViewController: UIViewController {
     
     func loadWebsite() {
         guard let url = URL(string: "https://pervinmuellim.az") else { return }
-        let request = URLRequest(
+        var request = URLRequest(
             url: url,
             cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
             timeoutInterval: 60
         )
+        request.setValue("Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1", forHTTPHeaderField: "User-Agent")
+        request.setValue("https://pervinmuellim.az", forHTTPHeaderField: "Referer")
+        request.setValue("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8", forHTTPHeaderField: "Accept")
+        request.setValue("az,en;q=0.9", forHTTPHeaderField: "Accept-Language")
         webView.load(request)
     }
     
@@ -88,6 +101,18 @@ extension ViewController: WKNavigationDelegate {
         retryLoad()
     }
     
+    func webView(_ webView: WKWebView,
+                 decidePolicyFor navigationResponse: WKNavigationResponse,
+                 decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
+        decisionHandler(.allow)
+    }
+    
+    func webView(_ webView: WKWebView,
+                 decidePolicyFor navigationAction: WKNavigationAction,
+                 decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        decisionHandler(.allow)
+    }
+    
     func showOfflinePage() {
         let html = """
         <html>
@@ -114,5 +139,18 @@ extension ViewController: WKNavigationDelegate {
         </html>
         """
         webView.loadHTMLString(html, baseURL: URL(string: "https://pervinmuellim.az"))
+    }
+}
+
+extension ViewController: WKUIDelegate {
+    
+    func webView(_ webView: WKWebView,
+                 createWebViewWith configuration: WKWebViewConfiguration,
+                 for navigationAction: WKNavigationAction,
+                 windowFeatures: WKWindowFeatures) -> WKWebView? {
+        if navigationAction.targetFrame == nil {
+            webView.load(navigationAction.request)
+        }
+        return nil
     }
 }
