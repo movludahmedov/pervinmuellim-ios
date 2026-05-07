@@ -5,131 +5,105 @@
 	};
 	objectVersion = 56;
 	objects = {
-		13B07F861A680F5B00A75B9A = {
-			isa = PBXBuildFile;
-			fileRef = 13B07F851A680F5B00A75B9A;
-		};
-		AA1234561A680F5B00A75B9A = {
-			isa = PBXBuildFile;
-			fileRef = AA1234551A680F5B00A75B9A;
-		};
-		BB1234561A680F5B00A75B9A = {
-			isa = PBXBuildFile;
-			fileRef = BB1234551A680F5B00A75B9A;
-		};
-		CC1234561A680F5B00A75B9A = {
-			isa = PBXBuildFile;
-			fileRef = CC1234571A680F5B00A75B9A;
-		};
-		SD1234561A680F5B00A75B9A = {
-			isa = PBXBuildFile;
-			fileRef = SD1234551A680F5B00A75B9A;
-		};
-		13B07F851A680F5B00A75B9A = {
-			isa = PBXFileReference;
-			lastKnownFileType = "wrapper.framework";
-			name = WebKit.framework;
-			path = System/Library/Frameworks/WebKit.framework;
-			sourceTree = SDKROOT;
-		};
-		13B07F951A680F5B00A75B9A = {
-			isa = PBXFileReference;
-			explicitFileType = wrapper.application;
-			includeInIndex = 0;
-			path = PervinMuellim.app;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		AA1234551A680F5B00A75B9A = {
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.swift;
-			name = AppDelegate.swift;
-			path = PervinMuellim/AppDelegate.swift;
-			sourceTree = "<group>";
-		};
-		BB1234551A680F5B00A75B9A = {
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.swift;
-			name = ViewController.swift;
-			path = PervinMuellim/ViewController.swift;
-			sourceTree = "<group>";
-		};
-		SD1234551A680F5B00A75B9A = {
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.swift;
-			name = SceneDelegate.swift;
-			path = PervinMuellim/SceneDelegate.swift;
-			sourceTree = "<group>";
-		};
-		CC1234551A680F5B00A75B9A = {
-			isa = PBXFileReference;
-			lastKnownFileType = text.plist.xml;
-			name = Info.plist;
-			path = PervinMuellim/Info.plist;
-			sourceTree = "<group>";
-		};
-		CC1234571A680F5B00A75B9A = {
-			isa = PBXFileReference;
-			lastKnownFileType = folder.assetcatalog;
-			name = Assets.xcassets;
-			path = Assets.xcassets;
-			sourceTree = "<group>";
-		};
-		DD1234551A680F5B00A75B9A = {
+
+/* Begin PBXBuildFile section */
+		13B07F861A680F5B00A75B9A /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13B07F851A680F5B00A75B9A /* WebKit.framework */; };
+		B520E9E02FABA371004E5D68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1234551A680F5B00A75B9A /* AppDelegate.swift */; };
+		B520E9E12FABA371004E5D68 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1234551A680F5B00A75B9A /* ViewController.swift */; };
+		B520E9E22FABA371004E5D68 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = SD1234551A680F5B00A75B9A /* SceneDelegate.swift */; };
+		B520E9E32FABA376004E5D68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC1234571A680F5B00A75B9A /* Assets.xcassets */; };
+		B5D3A4492FABB6A6009EED24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5D3A4482FABB6A6009EED24 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		13B07F851A680F5B00A75B9A /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		13B07F951A680F5B00A75B9A /* PervinMuellim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PervinMuellim.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA1234551A680F5B00A75B9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = PervinMuellim/AppDelegate.swift; sourceTree = "<group>"; };
+		B5D3A4462FABA9B0009EED24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B5D3A4482FABB6A6009EED24 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BB1234551A680F5B00A75B9A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = PervinMuellim/ViewController.swift; sourceTree = "<group>"; };
+		CC1234571A680F5B00A75B9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		SD1234551A680F5B00A75B9A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = PervinMuellim/SceneDelegate.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DD1234551A680F5B00A75B9A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13B07F861A680F5B00A75B9A,
+				13B07F861A680F5B00A75B9A /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B5000C772FAB9B85003320DE /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				13B07F851A680F5B00A75B9A /* WebKit.framework */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
 		};
 		EE1234551A680F5B00A75B9A = {
 			isa = PBXGroup;
 			children = (
-				FF1234551A680F5B00A75B9A,
-				13B07F951A680F5B00A75B9A,
+				B5D3A4482FABB6A6009EED24 /* LaunchScreen.storyboard */,
+				B5D3A4462FABA9B0009EED24 /* Info.plist */,
+				FF1234551A680F5B00A75B9A /* PervinMuellim */,
+				13B07F951A680F5B00A75B9A /* PervinMuellim.app */,
+				B5000C772FAB9B85003320DE /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
-		FF1234551A680F5B00A75B9A = {
+		FF1234551A680F5B00A75B9A /* PervinMuellim */ = {
 			isa = PBXGroup;
 			children = (
-				AA1234551A680F5B00A75B9A,
-				BB1234551A680F5B00A75B9A,
-				SD1234551A680F5B00A75B9A,
-				CC1234551A680F5B00A75B9A,
-				CC1234571A680F5B00A75B9A,
+				AA1234551A680F5B00A75B9A /* AppDelegate.swift */,
+				BB1234551A680F5B00A75B9A /* ViewController.swift */,
+				SD1234551A680F5B00A75B9A /* SceneDelegate.swift */,
+				CC1234571A680F5B00A75B9A /* Assets.xcassets */,
 			);
-			name = PervinMuellim;
 			path = PervinMuellim;
 			sourceTree = "<group>";
 		};
-		A01234561A680F5B00A75B9A = {
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A01234561A680F5B00A75B9A /* PervinMuellim */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A11234561A680F5B00A75B9A;
+			buildConfigurationList = A11234561A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "PervinMuellim" */;
 			buildPhases = (
-				A21234561A680F5B00A75B9A,
-				DD1234551A680F5B00A75B9A,
-				A31234561A680F5B00A75B9A,
+				A21234561A680F5B00A75B9A /* Sources */,
+				DD1234551A680F5B00A75B9A /* Frameworks */,
+				A31234561A680F5B00A75B9A /* Resources */,
 			);
-			buildRules = ();
-			dependencies = ();
+			buildRules = (
+			);
+			dependencies = (
+			);
 			name = PervinMuellim;
 			productName = PervinMuellim;
-			productReference = 13B07F951A680F5B00A75B9A;
+			productReference = 13B07F951A680F5B00A75B9A /* PervinMuellim.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A41234561A680F5B00A75B9A = {
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A41234561A680F5B00A75B9A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 2620;
 				TargetAttributes = {
 					A01234561A680F5B00A75B9A = {
 						CreatedOnToolsVersion = 15.0;
 					};
 				};
 			};
-			buildConfigurationList = A51234561A680F5B00A75B9A;
+			buildConfigurationList = A51234561A680F5B00A75B9A /* Build configuration list for PBXProject "PervinMuellim" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = az;
 			hasScannedForEncodings = 0;
@@ -143,109 +117,186 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A01234561A680F5B00A75B9A,
+				A01234561A680F5B00A75B9A /* PervinMuellim */,
 			);
 		};
-		A21234561A680F5B00A75B9A = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AA1234561A680F5B00A75B9A,
-				BB1234561A680F5B00A75B9A,
-				SD1234561A680F5B00A75B9A,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A31234561A680F5B00A75B9A = {
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A31234561A680F5B00A75B9A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC1234561A680F5B00A75B9A,
+				B520E9E32FABA376004E5D68 /* Assets.xcassets in Resources */,
+				B5D3A4492FABB6A6009EED24 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A51234561A680F5B00A75B9A = {
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A21234561A680F5B00A75B9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B520E9E02FABA371004E5D68 /* AppDelegate.swift in Sources */,
+				B520E9E12FABA371004E5D68 /* ViewController.swift in Sources */,
+				B520E9E22FABA371004E5D68 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A61234561A680F5B00A75B9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = TA5QW3L6ZW;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = iphoneos;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A71234561A680F5B00A75B9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = TA5QW3L6ZW;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		A81234561A680F5B00A75B9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				INFOPLIST_FILE = PervinMuellim/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = az.pervinmuellim.app;
+				PRODUCT_NAME = PervinMuellim;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A91234561A680F5B00A75B9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				INFOPLIST_FILE = PervinMuellim/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = az.pervinmuellim.app;
+				PRODUCT_NAME = PervinMuellim;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A11234561A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "PervinMuellim" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A61234561A680F5B00A75B9A,
-				A71234561A680F5B00A75B9A,
+				A81234561A680F5B00A75B9A /* Debug */,
+				A91234561A680F5B00A75B9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A11234561A680F5B00A75B9A = {
+		A51234561A680F5B00A75B9A /* Build configuration list for PBXProject "PervinMuellim" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A81234561A680F5B00A75B9A,
-				A91234561A680F5B00A75B9A,
+				A61234561A680F5B00A75B9A /* Debug */,
+				A71234561A680F5B00A75B9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A61234561A680F5B00A75B9A = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				SWIFT_VERSION = 5.0;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = iphoneos;
-				CURRENT_PROJECT_VERSION = 3;
-			};
-			name = Debug;
-		};
-		A71234561A680F5B00A75B9A = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				SWIFT_VERSION = 5.0;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = iphoneos;
-				CURRENT_PROJECT_VERSION = 3;
-			};
-			name = Release;
-		};
-		A81234561A680F5B00A75B9A = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "PervinMuellim/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "az.pervinmuellim.app";
-				DEVELOPMENT_TEAM = TA5QW3L6ZW;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				PROVISIONING_PROFILE_SPECIFIER = "PervinMuellim AppStore";
-				PRODUCT_NAME = PervinMuellim;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = iphoneos;
-				CURRENT_PROJECT_VERSION = 3;
-			};
-			name = Debug;
-		};
-		A91234561A680F5B00A75B9A = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "PervinMuellim/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "az.pervinmuellim.app";
-				DEVELOPMENT_TEAM = TA5QW3L6ZW;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				PROVISIONING_PROFILE_SPECIFIER = "PervinMuellim AppStore";
-				PRODUCT_NAME = PervinMuellim;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = iphoneos;
-				CURRENT_PROJECT_VERSION = 3;
-			};
-			name = Release;
-		};
+/* End XCConfigurationList section */
 	};
-	rootObject = A41234561A680F5B00A75B9A;
+	rootObject = A41234561A680F5B00A75B9A /* Project object */;
 }

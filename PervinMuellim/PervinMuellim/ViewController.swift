@@ -7,15 +7,71 @@ class ViewController: UIViewController {
     var activityIndicator: UIActivityIndicatorView!
     var retryCount = 0
     let maxRetry = 3
+    var blurView: UIVisualEffectView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
+        setupScreenProtection()
         setupWebView()
         setupActivityIndicator()
         loadWebsite()
     }
     
+    // MARK: - Ekran Qoruması
+    func setupScreenProtection() {
+        // Ekran yazısı qoruması
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(screenCaptureChanged),
+            name: UIScreen.capturedDidChangeNotification,
+            object: nil
+        )
+        
+        // Screenshot üçün TextField triki
+        addSecureField()
+    }
+    
+    func addSecureField() {
+        let secureField = UITextField()
+        secureField.isSecureTextEntry = true
+        secureField.translatesAutoresizingMaskIntoConstraints = false
+        
+        if let secureView = secureField.layer.sublayers?.first?.delegate as? UIView {
+            secureView.translatesAutoresizingMaskIntoConstraints = false
+            view.insertSubview(secureView, at: 0)
+            
+            NSLayoutConstraint.activate([
+                secureView.topAnchor.constraint(equalTo: view.topAnchor),
+                secureView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                secureView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                secureView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            ])
+        }
+    }
+    
+    @objc func screenCaptureChanged() {
+        if UIScreen.main.isCaptured {
+            showBlur()
+        } else {
+            hideBlur()
+        }
+    }
+    
+    func showBlur() {
+        guard blurView == nil else { return }
+        let blur = UIBlurEffect(style: .dark)
+        blurView = UIVisualEffectView(effect: blur)
+        blurView?.frame = view.bounds
+        view.addSubview(blurView!)
+    }
+    
+    func hideBlur() {
+        blurView?.removeFromSuperview()
+        blurView = nil
+    }
+    
+    // MARK: - WebView
     func setupWebView() {
         let config = WKWebViewConfiguration()
         config.allowsInlineMediaPlayback = true
@@ -30,9 +86,7 @@ class ViewController: UIViewController {
         config.preferences = webPreferences
         
         webView = WKWebView(frame: view.bounds, configuration: config)
-        
         webView.customUserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1"
-        
         webView.navigationDelegate = self
         webView.uiDelegate = self
         webView.backgroundColor = UIColor.white
